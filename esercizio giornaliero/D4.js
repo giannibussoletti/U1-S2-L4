@@ -151,9 +151,31 @@ console.log(stringaPrimaLettera)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const cutString = function (str) {
+  arrayString = str.split("")
+  arrayString.shift()
+  arrayString.pop()
+  const fraseNuova = arrayString.join("")
+
+  return fraseNuova
+}
+
+let cutCut = cutString("Cosa è l'azoto")
+console.log(cutCut)
 
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const giveMeRandom = function (parN) {
+  const arrayRandomNum = []
+  for (let i = 0; i < parN; i++) {
+    arrayRandomNum.push(Math.floor(Math.random() * 11))
+  }
+  return arrayRandomNum
+}
+
+let numeberArray = giveMeRandom(5)
+console.log(numeberArray)
