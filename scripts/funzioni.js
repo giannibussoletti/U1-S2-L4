@@ -182,3 +182,33 @@ const complexMath = function (valore /* PARAMETRO da assegnare */) {
 complexMath(34)
 complexMath(120)
 complexMath(300)
+
+// se ora dovessimo riutilizzare da un altra parte
+// solo una parte di quella funzione, per esempio
+// -36 non potremmo farlo perché fa parte di tutta la funzione
+
+// Possiamo anche separare le varie funzioni della FUNZIONE in FUNZIONI più piccole
+const elevaAlQuadrato = function (num) {
+  let risultatino = num * num
+  return risultatino // questo permette di far uscire il risultato al di fuori della funzione,
+  // che altrimenti rimarrebbe al suo interno
+}
+const meno36 = function (num) {
+  let risultatino = num - 36
+  return risultatino
+}
+
+const restoDi5 = function (num) {
+  let risultatino = num % 5
+  return risultatino
+}
+
+// Scomporre una funzione grande, può essere vantaggioso perché le varie funzioni
+// posso interagire tra di loro in maniera differente piuttosto che dover seguire
+// la logica della funzione unica
+
+const r1 = elevaAlQuadrato(102)
+const r2 = meno36(r1)
+const risultato = restoDi5(r2)
+
+console.log(risultato)
