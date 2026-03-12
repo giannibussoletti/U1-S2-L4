@@ -134,6 +134,20 @@ sumTheAll(10, 11)
 sumTheAll(13, 400)
 
 sumTheAll(10) // in questo caso num2 prendere il valore "d'ufficio" di undefined
+sumTheAll(1, 4, 6) // il terzo ARGOMENTO viene ignorato
+// perché non è dichiarato come PARAMETRO nella funzione
 
 // NOMENCLATURA: -> num1 e num2 si definiscono PARAMETRI della funzione.
 // NOMENCLATURA: -> 8 e 13, 18 e 45, cioè i DATI dell'invocazione, vengono chiamati ARGOMENTI
+
+// generalizziamo con altri esempi
+
+const sayHelloToAnyone = function (name = "Utente") {
+  const saluto = "Buongiorno, " + name + "!"
+  console.log(saluto)
+}
+
+sayHelloToAnyone("Stefano")
+sayHelloToAnyone("Mario")
+sayHelloToAnyone("Giangiorgio")
+sayHe1loToAnyone() // in questo caso il risultato sarà "utente"
