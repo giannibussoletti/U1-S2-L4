@@ -118,8 +118,8 @@ console.log(r1)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-const upperFirst = function (stringa) {
-  let nuovaFrase = []
+const upperFirst = function (stringa = "") {
+  const nuovaFrase = []
   const dividiStringa = stringa.split(" ")
   for (i = 0; i < dividiStringa.length; i++) {
     const dividiParola = dividiStringa[i].split("")
