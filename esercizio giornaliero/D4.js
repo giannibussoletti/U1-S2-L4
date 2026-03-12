@@ -123,17 +123,25 @@ console.log(r1)
 const upperFirst = function (stringa = "") {
   const nuovaFrase = []
   const dividiStringa = stringa.split(" ")
+
   for (i = 0; i < dividiStringa.length; i++) {
     const dividiParola = dividiStringa[i].split("")
+
     const upperFirst = dividiParola[0].toUpperCase()
+
     dividiParola.unshift(upperFirst)
+
     dividiParola.splice(1, 1)
+
     const unisciParola = dividiParola.join("")
+
     nuovaFrase.push(unisciParola)
   }
+
   const fraseUnita = nuovaFrase.join(" ")
   return fraseUnita
 }
+
 stringaPrimaLettera = upperFirst("ciao sono gianni")
 console.log(stringaPrimaLettera)
 
