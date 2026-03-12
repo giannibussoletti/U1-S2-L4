@@ -171,9 +171,8 @@ console.log(cutCut)
 
 const giveMeRandom = function (parN) {
   const arrayRandomNum = []
-  for (let i = 0; i < parN; i++) {
-    arrayRandomNum.push(Math.floor(Math.random() * 11))
-  }
+  for (let i = 0; i < parN; i++) {}
+  arrayRandomNum.push(Math.floor(Math.random() * 11))
   return arrayRandomNum
 }
 

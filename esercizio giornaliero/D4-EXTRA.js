@@ -8,6 +8,35 @@
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const arrayCreation = function (randomN) {
+  const randomArray = []
+  for (let i = 0; i < randomN; i++) {
+    randomArray.push(Math.floor(Math.random() * 11))
+  }
+  return randomArray
+}
+
+const checkArray = function (array) {
+  const arrayMaggiore5 = []
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > 5) {
+      arrayMaggiore5.push(array[i])
+      console.log(array[i] + " è maggiore di 5")
+    } else {
+      console.log(array[i] + " è minore di 5")
+    }
+  }
+  let sommaArray = 0
+  for (let i = 0; i < arrayMaggiore5.length; i++) {
+    sommaArray += arrayMaggiore5[i]
+  }
+  console.log(arrayMaggiore5)
+  console.log(sommaArray)
+}
+
+let primaFunzione = arrayCreation(100)
+checkArray(primaFunzione)
+
 /* EXTRA 2
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "shoppingCartTotal" che calcola il totale dovuto al negozio (tenendo conto delle quantità di ogni oggetto).
