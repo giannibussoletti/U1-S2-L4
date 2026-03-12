@@ -150,4 +150,35 @@ const sayHelloToAnyone = function (name = "Utente") {
 sayHelloToAnyone("Stefano")
 sayHelloToAnyone("Mario")
 sayHelloToAnyone("Giangiorgio")
-sayHe1loToAnyone() // in questo caso il risultato sarà "utente"
+sayHelloToAnyone() // in questo caso il risultato sarà "utente"
+
+const exploreArray = function (arr) {
+  for (let i = 0; i < arr.length; i++) {
+    const message = "Elemento" + ": " + arr[i] // "Elemento 0: Giorgia"
+    console.log(message)
+  }
+}
+
+let nameVero = ["nome", "cognome"]
+exploreArray(nameVero)
+
+// esiste anche un'ultima caratteristica delle funzioni: una funzione può avere un
+// VALORE di RITORNO (keyword "return")
+
+// esempio
+// andiamo a creare una funzione per dei calcoli matematici:
+
+const complexMath = function (valore /* PARAMETRO da assegnare */) {
+  let risultato = 0 // creiamo una funzione che avrà valore base 0
+  // ES. eleviamo al quadrato
+  risultato = valore * valore
+  // sottriamo 36
+  risultato -= 36
+  // per ultimo, dal numero ottenuto calcoiamo il resto di 5
+  risultato = risultato % 5
+  console.log(risultato) // stampiamo il risultato
+}
+
+complexMath(34)
+complexMath(120)
+complexMath(300)
