@@ -28,12 +28,12 @@ bark()
 
 // --- WARNING: non create le funzioni così!
 // 2)
-meow()
-// questo è un modo "vecchio" per creare funzioni in JS che ha una particolarità
-// 1)
-function meow() {
-  console.log("MAO")
-}
+// meow()
+// // questo è un modo "vecchio" per creare funzioni in JS che ha una particolarità
+// // 1)
+// function meow() {
+//   console.log("MAO")
+// }
 
 // le funzioni definite senza variabili ma solamente con il costrutto "function" presentano
 // un comportamento automatico: il cosidetto "HOISTING"
@@ -50,8 +50,9 @@ const incrementaContatore = function () {
 
 // quanto vale contatore?
 // contatore vale 0 //perché la funzione non è stata chiamata
-
+console.log("il contatore prima dell'invocazione: " + contatore)
 incrementaContatore() // chiamo la funzione
+console.log("il contatore dopo l'invocazione: " + contatore)
 // quindi adesso il contatore vale 10
 
 // la variabile "nascosta" non esiste al di fuori della funzione.
@@ -71,26 +72,68 @@ const sayHelloToStefano = function () {
   console.log(messaggio)
 }
 
+sayHelloToStefano()
+
 // un'altra idea per creare una funzione potrebbe essere quella di scrivere UNA VOLTA SOLA
 // delle righe che si presentano in vari punti del codice
 
 let globalCounter = 0
 
 const checkGlobalCounter = function () {
-  console.log("Valore di global counter: ")
+  console.log("Valore di global counter: " + globalCounter)
 }
 
 globalCounter++
-checkGlobalCounter
+checkGlobalCounter()
 
 globalCounter += 10
-checkGlobalCounter
+checkGlobalCounter()
 
 globalCounter -= 5
-checkGlobalCounter
+checkGlobalCounter()
 
 // nell'esempio sopra invece ci richiedere 3 volte il console log per ogni cambio di
 // globaCounter si è andata a creare una funzione per rendere il codice più funzionale e pulito.
 // Se dovessi andare a modificare il comportamento delle stesse righe più volte sarebbe un problema
 // la funzioni permette di cambiare il comportamento di quella riga una sola volta e rendere la modifica
 // avviabile per tutto il documento immediatamente
+
+// altro esempio
+const sum = function () {
+  const n1 = 5
+  const n2 = 7
+  const risultato = n1 + n2
+  console.log(risultato)
+}
+
+sum()
+
+// In questo esempio però il problema è cambiare i numeri della variabile
+// che rimangono uguali sempre o anche nella funzione sayHelloToStefano che dirà
+// sempre stessa frase
+
+// per riciclare una funzione si usano i PARAMETRI, che si usano per generalizzare
+// il comportamento di una funzione
+// PARAMETRIZZARE una funzione la rendere più GENERICA, più RIUTILIZZABILE;
+// una funzione per sommare due numeri NON HA I DUE VALORI inseriti al suo interno.
+// i dati possono essere forniti quando la funzione viene INVOCATA.
+
+// la parte 1, cioè la dichiarazione non saprà mai quali numeri sommare, utilizza dei "placeholders"
+const sumTheAll = function (num1, num2) {
+  // num1 e num2 sono PARAMETRI della funzione sumTheAll()
+  const risultato = num1 + num2
+  console.log(risultato)
+}
+
+// è nella parte 2, all'invocazione che i parametri vengono dichiarati
+sumTheAll(8, 9)
+// i parametri dichiarati nella parentesi corrispondo ai placeholders messi
+// nella funzione. quindi andando a sostituire i numeri nell'invocazione
+// il risultato cambierà
+sumTheAll(10, 11)
+sumTheAll(13, 400)
+
+sumTheAll(10) // in questo caso num2 prendere il valore "d'ufficio" di undefined
+
+// NOMENCLATURA: -> num1 e num2 si definiscono PARAMETRI della funzione.
+// NOMENCLATURA: -> 8 e 13, 18 e 45, cioè i DATI dell'invocazione, vengono chiamati ARGOMENTI
