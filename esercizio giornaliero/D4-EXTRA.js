@@ -34,15 +34,82 @@ const checkArray = function (array) {
   console.log(sommaArray)
 }
 
-let primaFunzione = arrayCreation(100)
-checkArray(primaFunzione)
+// let primaFunzione = arrayCreation(100)
+// checkArray(primaFunzione)
 
 /* EXTRA 2
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "shoppingCartTotal" che calcola il totale dovuto al negozio (tenendo conto delle quantità di ogni oggetto).
 */
 
+const shoppingCart = [
+  {
+    id: 101,
+    name: "Caffè in grani - Miscela Arabica",
+    price: 12.9,
+    quantity: 5,
+  },
+  {
+    id: 102,
+    name: "Moka Express (3 tazze)",
+    price: 24.5,
+    quantity: 1,
+  },
+  {
+    id: 103,
+    name: "Set di 4 tazzine in ceramica",
+    price: 18.0,
+    quantity: 3,
+  },
+  {
+    id: 104,
+    name: "Biscotti artigianali al burro",
+    price: 5.5,
+    quantity: 3,
+  },
+
+  {
+    id: 105,
+    name: "Macina caffè manuale in acciaio",
+    price: 35.0,
+    quantity: 6,
+  },
+  {
+    id: 106,
+    name: "Confezione 100 filtri in carta",
+    price: 6.2,
+    quantity: 2,
+  },
+  {
+    id: 107,
+    name: "Zucchero di canna integrale (500g)",
+    price: 3.5,
+    quantity: 4,
+  },
+  {
+    id: 108,
+    name: "Bricco per latte in acciaio inox",
+    price: 15.75,
+    quantity: 1,
+  },
+]
+
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const shoppingCartTotal = function () {
+  const arrayShopCart = []
+  let prezzoTotale = 0
+  for (let i = 0; i < shoppingCart.length; i++) {
+    const totParziale = shoppingCart[i].price * shoppingCart[i].quantity
+    arrayShopCart.push(totParziale)
+  }
+  for (let i = 0; i < arrayShopCart.length; i++) {
+    prezzoTotale += arrayShopCart[i]
+  }
+  console.log(prezzoTotale)
+}
+
+shoppingCartTotal()
 
 /* EXTRA 3
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
@@ -50,6 +117,19 @@ checkArray(primaFunzione)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const newItem = {
+  id: 240,
+  name: "Sturalavandini",
+  price: 15.75,
+  quantity: 1,
+}
+
+const addToShoppingCart = function (newItem) {
+  shoppingCart.push(newItem)
+  console.log("il totale degli elementi nel carrello è: ", shoppingCart.length)
+}
+
+addToShoppingCart(newItem)
 
 /* EXTRA 4
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
