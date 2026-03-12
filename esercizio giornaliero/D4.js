@@ -102,9 +102,9 @@ check3and7(10)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 const reverseString = function (stringa) {
-  let dividiStringa = stringa.split("") // Divide la stringa creando un array con le singole lettere
-  let arraySpecchio = dividiStringa.reverse() // inverte tutte le posizioni dei vari oggetti dell'array scambiando le posizioni da inizio a fine
-  let unisciArraySpecchio = arraySpecchio.join("") // riunisce l'array
+  const dividiStringa = stringa.split("") // Divide la stringa creando un array con le singole lettere
+  const arraySpecchio = dividiStringa.reverse() // inverte tutte le posizioni dei vari oggetti dell'array scambiando le posizioni da inizio a fine
+  const unisciArraySpecchio = arraySpecchio.join("") // riunisce l'array
   return unisciArraySpecchio
 }
 
