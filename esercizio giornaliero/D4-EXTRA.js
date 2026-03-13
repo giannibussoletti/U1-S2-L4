@@ -46,50 +46,50 @@ const shoppingCart = [
   {
     id: 101,
     name: "Caffè in grani - Miscela Arabica",
-    price: 12.9,
+    price: 12,
     quantity: 5,
   },
   {
     id: 102,
     name: "Moka Express (3 tazze)",
-    price: 24.5,
+    price: 10,
     quantity: 1,
   },
   {
     id: 103,
     name: "Set di 4 tazzine in ceramica",
-    price: 18.0,
+    price: 18,
     quantity: 3,
   },
   {
     id: 104,
     name: "Biscotti artigianali al burro",
-    price: 5.5,
+    price: 505,
     quantity: 3,
   },
 
   {
     id: 105,
     name: "Macina caffè manuale in acciaio",
-    price: 35.0,
+    price: 35,
     quantity: 6,
   },
   {
     id: 106,
     name: "Confezione 100 filtri in carta",
-    price: 6.2,
+    price: 6,
     quantity: 2,
   },
   {
     id: 107,
     name: "Zucchero di canna integrale (500g)",
-    price: 3.5,
+    price: 13,
     quantity: 4,
   },
   {
     id: 108,
     name: "Bricco per latte in acciaio inox",
-    price: 15.75,
+    price: 120,
     quantity: 1,
   },
 ]
@@ -138,6 +138,26 @@ addToShoppingCart(newItem)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const maxShoppingCart = function () {
+  let maxPrice = 0
+  for (let i = 0; i < shoppingCart.length; i++) {
+    for (let x = 0; x < shoppingCart.length; x++) {
+      const varPriceI = shoppingCart[i].price
+      const varPriceX = shoppingCart[x].price
+      if (maxPrice > varPriceI && maxPrice > varPriceX) {
+        maxPrice = maxPrice
+      } else if (maxPrice < varPriceI) {
+        maxPrice = varPriceI
+      } else if (maxPrice < varPriceX) {
+        maxPrice = varPriceX
+      }
+    }
+  }
+  return maxPrice
+}
+const finalPrice = maxShoppingCart()
+console.log(finalPrice)
+
 /* EXTRA 5
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "latestShoppingCart" che riceve l'array "shoppingCart" e ritorna l'ultimo elemento.
@@ -151,6 +171,19 @@ addToShoppingCart(newItem)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const loopUntil = function (valX) {
+  for (let i = 0; i < 3; i++) {
+    const causualNum = Math.floor(Math.random() * 10)
+    if (causualNum >= valX) {
+      console.log(causualNum)
+    } else {
+      console.log(causualNum)
+      i = 0
+    }
+  }
+}
+
+loopUntil(9)
 
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
