@@ -190,7 +190,7 @@ Crea una funzione chiamata "average" che riceve un array come parametro e ne rit
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-totalVar = averageTotal([6, "A", 5, 7, "Q", 9, "R", "Z", "O", 2, 8, 3, "W", 6, "V", "Q", 5])
+const totalVar = [6, "A", 5, 7, "Q", 20, "R", "Z", "O", 2, 8, 3, "W", 6, "V", "Q", 5]
 
 const averageTotal = function (array) {
   let totalVar = 0
@@ -204,13 +204,56 @@ const averageTotal = function (array) {
   return totalVar
 }
 
-console.log(totalVar)
+console.log(averageTotal(totalVar))
 
 /* EXTRA 8
  Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
 */
 
+const frasiVarie = [
+  "Ciao.",
+  "Il gatto dorme sul divano.",
+  "Oggi il cielo sembra promettere un temporale improvviso verso sera.",
+  "JavaScript è un linguaggio versatile.",
+  "Nonostante le difficoltà iniziali, il team è riuscito a completare il progetto entro la scadenza prefissata.",
+  "Semplice è meglio.",
+  "L'autunno porta con sé il profumo delle foglie secche e delle caldarroste appena fatte.",
+  "42.",
+  "Viaggiare permette di aprire la mente a nuove culture e modi di pensare totalmente differenti dai nostri.",
+  "Piove.",
+]
+
 /* SCRIVI QUI LA TUA RISPOSTA */
+const longest = function (array) {
+  const splitFrasiVarie = []
+  const newFrasiArray = []
+  for (let i = 0; i < array.length; i++) {
+    const splitting = array[i].split("")
+    const pushLength = splitting.length
+    splitFrasiVarie.push(pushLength)
+    newFrasiArray.push(splitting.join(""))
+  }
+  let greaterCharNumber = 0
+  let lengthBox = 0
+  for (let i = 0; i < splitFrasiVarie.length; i++) {
+    for (let j = 0; j < splitFrasiVarie.length; j++) {
+      const indexI = splitFrasiVarie[i]
+      const indexX = splitFrasiVarie[j]
+      if (greaterCharNumber > indexI && greaterCharNumber > indexX) {
+        greaterCharNumber = greaterCharNumber
+      } else if (greaterCharNumber < indexI) {
+        greaterCharNumber = indexI
+        lengthBox = [i]
+      } else if (greaterCharNumber < indexX) {
+        greaterCharNumber = indexX
+        lengthBox = [j]
+      }
+    }
+  }
+  console.log(lengthBox, greaterCharNumber)
+}
+
+longest(frasiVarie)
 
 /* EXTRA 9
  Crea una funzione per creare un filtro anti-spam per la tua casella email. La funzione riceve un parametro stringa chiamato "emailContent", e torna un valore booleano.
