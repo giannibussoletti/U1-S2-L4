@@ -190,6 +190,8 @@ Crea una funzione chiamata "average" che riceve un array come parametro e ne rit
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+totalVar = averageTotal([6, "A", 5, 7, "Q", 9, "R", "Z", "O", 2, 8, 3, "W", 6, "V", "Q", 5])
+
 const averageTotal = function (array) {
   let totalVar = 0
   for (let i = 0; i < array.length; i++) {
@@ -197,15 +199,13 @@ const averageTotal = function (array) {
     if (itsANumber === true) {
       partVar = array[i]
       totalVar = totalVar + partVar
-    } else {
-      totalVar
     }
   }
   return totalVar
 }
 
-totalVar = averageTotal([6, "A", 4, 7, "Q", 9, "R", "Z", "O", 2, 8, 3, "W", 6, "V", "Q", 5])
 console.log(totalVar)
+
 /* EXTRA 8
  Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
 */
