@@ -34,9 +34,6 @@ const checkArray = function (array) {
   console.log(sommaArray)
 }
 
-// let primaFunzione = arrayCreation(100)
-// checkArray(primaFunzione)
-
 /* EXTRA 2
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "shoppingCartTotal" che calcola il totale dovuto al negozio (tenendo conto delle quantità di ogni oggetto).
@@ -163,7 +160,21 @@ console.log(finalPrice)
  Crea una funzione chiamata "latestShoppingCart" che riceve l'array "shoppingCart" e ritorna l'ultimo elemento.
 */
 
+const latestShoppingCart = function (array) {
+  const ultimoProdotto = shoppingCart[shoppingCart.length - 1]
+  console.log(
+    "il tuo ultimo prodotto nel carrello è: " +
+      ultimoProdotto.name +
+      " dal costo di " +
+      ultimoProdotto.price +
+      " e ne hai " +
+      ultimoProdotto.quantity,
+  )
+}
+
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+latestShoppingCart(shoppingCart)
 
 /* EXTRA 6
  Crea una funzione chiamata "loopUntil" che riceve un numero intero come parametro con valore tra 0 e 9.
@@ -183,7 +194,7 @@ const loopUntil = function (valX) {
   }
 }
 
-loopUntil(9)
+// loopUntil(9)
 
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
@@ -194,14 +205,17 @@ const totalVar = [6, "A", 5, 7, "Q", 20, "R", "Z", "O", 2, 8, 3, "W", 6, "V", "Q
 
 const averageTotal = function (array) {
   let totalVar = 0
+  const arrayOnlyNumber = []
   for (let i = 0; i < array.length; i++) {
     const itsANumber = typeof array[i] === "number"
     if (itsANumber === true) {
       partVar = array[i]
       totalVar = totalVar + partVar
+      arrayOnlyNumber.push(partVar)
     }
   }
-  return totalVar
+  const mediaAritmentica = totalVar / arrayOnlyNumber.length
+  return mediaAritmentica
 }
 
 console.log(averageTotal(totalVar))
@@ -234,7 +248,7 @@ const longest = function (array) {
     newFrasiArray.push(splitting.join(""))
   }
   let greaterCharNumber = 0
-  let lengthBox = 0
+  let lengthBox
   for (let i = 0; i < splitFrasiVarie.length; i++) {
     for (let j = 0; j < splitFrasiVarie.length; j++) {
       const indexI = splitFrasiVarie[i]
@@ -251,13 +265,13 @@ const longest = function (array) {
     }
   }
   console.log(
-    "La frase più lunga nell'array è: ",
-    "'",
-    newFrasiArray[lengthBox],
-    "'",
-    "con ",
-    greaterCharNumber,
-    " caratteri in totale",
+    "La frase più lunga nell'array è: " +
+      "'" +
+      newFrasiArray[lengthBox] +
+      "'" +
+      " con " +
+      greaterCharNumber +
+      " caratteri in totale.😊",
   )
 }
 
