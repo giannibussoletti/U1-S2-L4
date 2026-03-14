@@ -250,7 +250,15 @@ const longest = function (array) {
       }
     }
   }
-  console.log(lengthBox, greaterCharNumber)
+  console.log(
+    "La frase più lunga nell'array è: ",
+    "'",
+    newFrasiArray[lengthBox],
+    "'",
+    "con ",
+    greaterCharNumber,
+    " caratteri in totale",
+  )
 }
 
 longest(frasiVarie)
