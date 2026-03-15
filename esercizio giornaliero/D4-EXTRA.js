@@ -283,6 +283,20 @@ longest(frasiVarie)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const antiSpam = function (emailContent) {
+  let notSpam
+  if (emailContent.includes("SPAM") || emailContent.includes("SCAM") === false) {
+    notSpam = true
+  } else {
+    notSpam = false
+  }
+  return notSpam
+}
+
+emailContent = antiSpam(
+  "Viaggiare permette di aprire la mente a nuove culture e modi di pensare totalmente differenti dai nostri. SPAM",
+)
+console.log(emailContent)
 
 /* EXTRA 10
  Scrivi una funzione che riceve una data come parametro, e calcola il numero di giorni passati da quella data.
@@ -290,12 +304,49 @@ longest(frasiVarie)
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const timePass2 = function (start) {
+  const dataIniziale = new Date(start)
+  const dataCorrente = new Date()
+
+  const giornoInMS = 1000 * 60 * 60 * 24
+  const diffInTempo = dataCorrente.getTime() - dataIniziale.getTime()
+  const diffInGiorni = Math.round(diffInTempo / giornoInMS)
+
+  return diffInGiorni
+}
+
+const giorniPassati = timePass2("02/13/1994")
+
+console.log(giorniPassati)
+
 /* EXTRA 11
  Scrivi una funzione chiamata "matrixGenerator" che riceve come parametri due numeri interi, "x" e "y".
  Il risultato deve essere una matrice di "x" volte "y", e i valori devono rispecchiare gli indici della posizione all'interno della matrice.
  Es.: x = 3, y = 2
- ["00","01","02"
- "10","11","12"]
+ [
+ ["00","01","02"]
+ ["10","11","12"]
+ ]
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const matrixGenerator = function (x, y) {
+  let matriceArray = []
+  const finalMatrix = []
+  let indexCount = 0
+
+  for (let i = 0; i < y; i++) {
+    for (let j = indexCount; j < x; j++) {
+      matriceArray.push(j)
+    }
+    finalMatrix.push(matriceArray)
+    x += matriceArray.length
+    indexCount += matriceArray.length
+    matriceArray = []
+  }
+  console.log(finalMatrix)
+}
+
+matrixGenerator(5, 5)
+// creare una riga di array che cotengano i loro rispettivi posti
