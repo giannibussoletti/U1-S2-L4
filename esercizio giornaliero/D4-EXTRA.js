@@ -350,4 +350,3 @@ const matrixGenerator = function (x, y) {
 
 const matrixSolution = matrixGenerator(5, 2)
 console.log(matrixSolution)
-// creare una riga di array che cotengano i loro rispettivi posti
