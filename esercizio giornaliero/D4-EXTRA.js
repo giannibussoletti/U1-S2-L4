@@ -345,8 +345,9 @@ const matrixGenerator = function (x, y) {
     indexCount += matriceArray.length
     matriceArray = []
   }
-  console.log(finalMatrix)
+  return finalMatrix
 }
 
-matrixGenerator(5, 5)
+const matrixSolution = matrixGenerator(5, 2)
+console.log(matrixSolution)
 // creare una riga di array che cotengano i loro rispettivi posti
